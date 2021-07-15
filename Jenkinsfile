@@ -5,9 +5,9 @@ pipeline {
       PATH ="/usr/share/maven/bin:$PATH" 
      }
      stages {
-        stage ("SCM") {
+        stage ("cloning the code from git") {
             steps {
-               git 'https://github.com/gowthamvishnu/BankInfo-1.git'   
+               git branch: 'develop', url: 'https://github.com/gowthamvishnu/BankInfo-1.git'  
             }          
         }
         stage ("building & testing the code with sonar") {
