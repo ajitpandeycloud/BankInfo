@@ -49,6 +49,7 @@ pipeline {
             }
           stage ("building docker container") {
             steps {
+              sh  "rm -rf /var/lib/jenkins/workspace/multibranch_pipeline_develop/BankInfo-1"
               sh  "git clone -b develop https://github.com/gowthamvishnu/BankInfo-1.git"
               sh  "cd BankInfo-1"
               sh  "cp /var/lib/jenkins/workspace/multibranch_pipeline_develop/target/BankInfo-0.0.1-SNAPSHOT.jar ."
