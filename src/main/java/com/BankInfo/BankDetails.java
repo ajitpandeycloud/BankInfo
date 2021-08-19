@@ -15,5 +15,21 @@ public class BankDetails {
 	public String bankServices() {
 		return "bankservices";
 	}
+	@RequestMapping("/index")
+	public String bankIndex() {
+		return "index";
+	}
+	@RequestMapping("/forgetpwd")
+	public String bankForgetpwd() {
+		return "forgetpwd";
+	}
+	@RequestMapping("/signup")
+	public String bankSignup() {
+		return "signup";
+	}
+	@RequestMapping("/contactus")
+	public String bankContactus() {
+		return "contactus";
+	}
 
 }
