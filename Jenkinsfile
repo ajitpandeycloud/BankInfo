@@ -51,7 +51,7 @@ pipeline {
               sh  "rm -rf /var/lib/jenkins/workspace/multibranch_pipeline_master/BankInfo-1"
               sh  "docker rm -f bankinfocontainer"
               sh  "docker rmi -f bankinfoimage"
-              sh  "git clone https://github.com/anilp2005/Bankinfo_main.git"
+              sh  "git clone https://github.com/ajitpandeycloud/Bankinfo_main.git"
               sh  "cd BankInfo-1"
               sh  "cp /var/lib/jenkins/workspace/multibranch_pipeline_master/target/BankInfo-0.0.1-SNAPSHOT.jar ."
               sh  "sudo docker build -t bankinfoimage ." 
