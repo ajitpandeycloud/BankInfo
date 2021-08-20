@@ -6,22 +6,20 @@ pipeline {
      stages {
         stage ("cloning git repo") {
             steps {
-               git branch: 'master', url: 'https://github.com/anilp2005/Bankinfo_main.git'    
+               git branch: 'master', url: 'https://github.com/ajitpandeycloud/Bankinfo_main.git'    
             }          
         }
         stage ("building & testing the code with sonar") {
             steps {
-    withSonarQubeEnv('SonarQube_token') {
-      sh "${mvn}/bin/mvn sonar:sonar"
+               sh "mvn clean install sonar:sonar" 
             }          
         }
-       }
         stage ('Code Quality') {
             steps {
                 jacoco()
             }
         }
-        stage ('Jfrog server') {
+       stage ('Jfrog server') {
             steps {
                 rtServer (
                     id: 'Artifactory',
